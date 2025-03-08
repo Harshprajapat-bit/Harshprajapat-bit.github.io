@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickRide - Ride-Hailing Service</title>
+</head>
+<body>
+  <!-- Step 1: Role Selection -->
+  <section id="roleSelection">
+    <h1>Welcome to QuickRide</h1>
+    <h2>Register As:</h2>
+    <form action="#driverRegistration" method="get">
+      <button type="submit">Driver</button>
+    </form>
+    <form action="#riderRegistration" method="get">
+      <button type="submit">Rider</button>
+    </form>
+  </section>
+
+  <!-- Step 2: Driver Registration -->
+  <section id="driverRegistration">
+    <h1>Driver Registration</h1>
+    <form action="#driverConfirmation" method="get">
+      <label for="driverName">Full Name:</label>
+      <input type="text" id="driverName" name="driverName" required>
+      <br>
+      <label for="driverAddress">Address:</label>
+      <input type="text" id="driverAddress" name="driverAddress" required>
+      <br>
+      <label for="driverLicense">Upload License:</label>
+      <input type="file" id="driverLicense" name="driverLicense" required>
+      <br>
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+  <!-- Step 3: Driver Confirmation -->
+  <section id="driverConfirmation">
+    <h1>Registration Successful!</h1>
+    <p>Thank you for registering as a driver. We will contact you soon.</p>
+    <a href="#roleSelection">Back to Home</a>
+  </section>
+
+  <!-- Step 4: Rider Registration -->
+  <section id="riderRegistration">
+    <h1>Rider Registration</h1>
+    <form action="#riderConfirmation" method="get">
+      <label for="riderName">Full Name:</label>
+      <input type="text" id="riderName" name="riderName" required>
+      <br>
+      <label for="riderPhone">Phone Number:</label>
+      <input type="tel" id="riderPhone" name="riderPhone" required>
+      <br>
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+  <!-- Step 5: Rider Confirmation -->
+  <section id="riderConfirmation">
+    <h1>Registration Successful!</h1>
+    <p>Thank you for registering as a rider. You can now book a ride.</p>
+    <a href="#bookRide">Book a Ride</a>
+  </section>
+
+  <!-- Step 6: Book a Ride -->
+  <section id="bookRide">
+    <h1>Book a Ride</h1>
+    <form action="#selectDriver" method="get">
+      <label for="pickupLocation">Pickup Location:</label>
+      <input type="text" id="pickupLocation" name="pickupLocation" required>
+      <br>
+      <label for="dropLocation">Drop Location:</label>
+      <input type="text" id="dropLocation" name="dropLocation" required>
+      <br>
+      <label for="vehicleType">Vehicle Type:</label>
+      <select id="vehicleType" name="vehicleType" required>
+        <option value="bike">Bike</option>
+        <option value="auto">Auto</option>
+        <option value="car">Car</option>
+      </select>
+      <br>
+      <button type="submit">Search Drivers</button>
+    </form>
+  </section>
+
+  <!-- Step 7: Select Driver -->
+  <section id="selectDriver">
+    <h1>Available Drivers</h1>
+    <p>Driver 1: John (Bike) - Fare: ₹50</p>
+    <p>Driver 2: Alice (Auto) - Fare: ₹100</p>
+    <p>Driver 3: Bob (Car) - Fare: ₹150</p>
+    <form action="#rideConfirmation" method="get">
+      <label for="selectedDriver">Select Driver:</label>
+      <select id="selectedDriver" name="selectedDriver" required>
+        <option value="John">John (Bike) - ₹50</option>
+        <option value="Alice">Alice (Auto) - ₹100</option>
+        <option value="Bob">Bob (Car) - ₹150</option>
+      </select>
+      <br>
+      <button type="submit">Confirm Ride</button>
+    </form>
+  </section>
+
+  <!-- Step 8: Ride Confirmation -->
+  <section id="rideConfirmation">
+    <h1>Ride Confirmed!</h1>
+    <p>Your driver will contact you shortly. Thank you for using QuickRide.</p>
+    <a href="#roleSelection">Back to Home</a>
+  </section>
+</body>
+</html>
